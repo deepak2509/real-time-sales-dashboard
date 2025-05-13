@@ -1,0 +1,55 @@
+[2025-05-13T22:33:11.176+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_etl_dag.extract manual__2025-05-13T22:33:09.405733+00:00 [queued]>
+[2025-05-13T22:33:11.180+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_etl_dag.extract manual__2025-05-13T22:33:09.405733+00:00 [queued]>
+[2025-05-13T22:33:11.180+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-05-13T22:33:11.185+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-05-13 22:33:09.405733+00:00
+[2025-05-13T22:33:11.188+0000] {standard_task_runner.py:57} INFO - Started process 180 to run task
+[2025-05-13T22:33:11.190+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sales_etl_dag', 'extract', 'manual__2025-05-13T22:33:09.405733+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/sales_dags.py', '--cfg-path', '/tmp/tmpztwoefas']
+[2025-05-13T22:33:11.192+0000] {standard_task_runner.py:85} INFO - Job 81: Subtask extract
+[2025-05-13T22:33:11.222+0000] {task_command.py:415} INFO - Running <TaskInstance: sales_etl_dag.extract manual__2025-05-13T22:33:09.405733+00:00 [running]> on host dc78515d753b
+[2025-05-13T22:33:11.270+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='deepak.gadde24@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_etl_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T22:33:09.405733+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T22:33:09.405733+00:00'
+[2025-05-13T22:33:11.273+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.4', 9092)]>: connecting to kafka:9092 [('172.19.0.4', 9092) IPv4]
+[2025-05-13T22:33:11.294+0000] {conn.py:618} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.4', 9092)]>: Broker version identified as 2.6
+[2025-05-13T22:33:11.295+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.4', 9092)]>: Connection complete.
+[2025-05-13T22:33:11.296+0000] {consumer.py:120} WARNING - group_id is None: disabling auto-commit.
+[2025-05-13T22:33:11.296+0000] {subscription_state.py:177} INFO - Updating subscribed topics to: ('sales_topic',)
+[2025-05-13T22:33:11.589+0000] {subscription_state.py:246} INFO - Updated partition assignment: [('sales_topic', 0)]
+[2025-05-13T22:33:11.592+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T22:33:11.594+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=1 host=192.168.1.123:9092 <connected> [IPv4 ('192.168.1.123', 9092)]>: Connection complete.
+[2025-05-13T22:33:11.595+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.4', 9092)]>: Closing connection. 
+[2025-05-13T22:33:11.606+0000] {fetcher.py:413} INFO - Resetting offset for partition ('sales_topic', 0) to offset 0.
+[2025-05-13T22:57:33.581+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-05-13T22:57:33.712+0000] {process_utils.py:131} INFO - Sending 15 to group 180. PIDs of all processes in the group: [180]
+[2025-05-13T22:57:33.713+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 180
+[2025-05-13T22:57:33.720+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-05-13T22:57:33.810+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/sales_dags.py", line 31, in extract_task
+    records = extract_sales_data(batch_size=100)
+  File "/opt/airflow/etl_scripts/extract_from_kafka.py", line 13, in extract_sales_data
+    for msg in consumer:
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 1188, in __next__
+    return next(self._iterator)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 1160, in _message_generator_v2
+    record_map = self.poll(timeout_ms=timeout_ms, update_offsets=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 684, in poll
+    records = self._poll_once(timer, max_records, update_offsets=update_offsets)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 729, in _poll_once
+    self._client.poll(timeout_ms=poll_timeout_ms)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 685, in poll
+    self._poll(timeout / 1000)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 728, in _poll
+    ready = self._selector.select(timeout)
+  File "/usr/local/lib/python3.8/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-05-13T22:57:33.855+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=sales_etl_dag, task_id=extract, execution_date=20250513T223309, start_date=20250513T223311, end_date=20250513T225733
+[2025-05-13T22:57:33.915+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 81 for task extract (Task received SIGTERM signal; 180)
+[2025-05-13T22:57:33.978+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=180, status='terminated', exitcode=1, started='22:33:10') (180) terminated with exit code 1
+[2025-05-13T22:57:33.984+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-05-13T22:57:34.050+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

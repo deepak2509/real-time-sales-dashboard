@@ -1,0 +1,23 @@
+[2025-05-13T18:20:11.386+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_etl_dag.extract scheduled__2025-05-13T17:00:00+00:00 [queued]>
+[2025-05-13T18:20:11.396+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_etl_dag.extract scheduled__2025-05-13T17:00:00+00:00 [queued]>
+[2025-05-13T18:20:11.397+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-05-13T18:20:11.415+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-05-13 17:00:00+00:00
+[2025-05-13T18:20:11.448+0000] {standard_task_runner.py:57} INFO - Started process 191 to run task
+[2025-05-13T18:20:11.454+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sales_etl_dag', 'extract', 'scheduled__2025-05-13T17:00:00+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/sales_dags.py', '--cfg-path', '/tmp/tmp8xd6snzj']
+[2025-05-13T18:20:11.457+0000] {standard_task_runner.py:85} INFO - Job 55: Subtask extract
+[2025-05-13T18:20:11.535+0000] {task_command.py:415} INFO - Running <TaskInstance: sales_etl_dag.extract scheduled__2025-05-13T17:00:00+00:00 [running]> on host 62fce28afc67
+[2025-05-13T18:20:11.641+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='deepak.gadde24@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_etl_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-13T17:00:00+00:00'
+[2025-05-13T18:20:11.647+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.4', 9092)]>: connecting to kafka:9092 [('172.19.0.4', 9092) IPv4]
+[2025-05-13T18:20:11.664+0000] {conn.py:618} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.4', 9092)]>: Broker version identified as 2.6
+[2025-05-13T18:20:11.665+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.4', 9092)]>: Connection complete.
+[2025-05-13T18:20:11.666+0000] {consumer.py:120} WARNING - group_id is None: disabling auto-commit.
+[2025-05-13T18:20:11.667+0000] {subscription_state.py:177} INFO - Updating subscribed topics to: ('sales_topic',)
+[2025-05-13T18:20:11.673+0000] {subscription_state.py:246} INFO - Updated partition assignment: [('sales_topic', 0)]
+[2025-05-13T18:20:11.674+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=1 host=10.48.206.142:9092 <connecting> [IPv4 ('10.48.206.142', 9092)]>: connecting to 10.48.206.142:9092 [('10.48.206.142', 9092) IPv4]
+[2025-05-13T18:20:11.677+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=1 host=10.48.206.142:9092 <connected> [IPv4 ('10.48.206.142', 9092)]>: Connection complete.
+[2025-05-13T18:20:11.678+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-2.2.7, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.4', 9092)]>: Closing connection. 
+[2025-05-13T18:20:11.704+0000] {fetcher.py:413} INFO - Resetting offset for partition ('sales_topic', 0) to offset 0.
+[2025-05-13T18:21:19.650+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-05-13T18:21:19.677+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=sales_etl_dag, task_id=extract, execution_date=20250513T170000, start_date=20250513T182011, end_date=20250513T182119
+[2025-05-13T18:21:19.741+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-13T18:21:19.803+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

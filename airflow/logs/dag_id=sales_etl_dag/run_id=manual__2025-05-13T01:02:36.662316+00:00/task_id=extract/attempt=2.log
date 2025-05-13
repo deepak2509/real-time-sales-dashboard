@@ -1,0 +1,73 @@
+[2025-05-13T01:07:41.774+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_etl_dag.extract manual__2025-05-13T01:02:36.662316+00:00 [queued]>
+[2025-05-13T01:07:41.777+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_etl_dag.extract manual__2025-05-13T01:02:36.662316+00:00 [queued]>
+[2025-05-13T01:07:41.777+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-05-13T01:07:41.782+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-05-13 01:02:36.662316+00:00
+[2025-05-13T01:07:41.785+0000] {standard_task_runner.py:57} INFO - Started process 285 to run task
+[2025-05-13T01:07:41.787+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sales_etl_dag', 'extract', 'manual__2025-05-13T01:02:36.662316+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/sales_dags.py', '--cfg-path', '/tmp/tmp9awaoq3p']
+[2025-05-13T01:07:41.789+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask extract
+[2025-05-13T01:07:41.798+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-13T01:07:41.817+0000] {task_command.py:415} INFO - Running <TaskInstance: sales_etl_dag.extract manual__2025-05-13T01:02:36.662316+00:00 [running]> on host a6e22ba9fca3
+[2025-05-13T01:07:41.852+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='deepak' AIRFLOW_CTX_DAG_ID='sales_etl_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T01:02:36.662316+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T01:02:36.662316+00:00'
+[2025-05-13T01:07:41.854+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2025-05-13T01:07:41.854+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:41.854+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:41.854+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2025-05-13T01:07:41.855+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:41.855+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:41.855+0000] {client_async.py:1049} WARNING - No node available during check_version; sleeping 0.05 secs
+[2025-05-13T01:07:41.907+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2025-05-13T01:07:41.907+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:41.907+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:41.907+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2025-05-13T01:07:41.907+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:41.907+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:41.908+0000] {client_async.py:1049} WARNING - No node available during check_version; sleeping 0.10 secs
+[2025-05-13T01:07:42.012+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2025-05-13T01:07:42.013+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:42.013+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:42.014+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2025-05-13T01:07:42.014+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:42.014+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:42.014+0000] {client_async.py:1049} WARNING - No node available during check_version; sleeping 0.22 secs
+[2025-05-13T01:07:42.232+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2025-05-13T01:07:42.233+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:42.233+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:42.234+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2025-05-13T01:07:42.234+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:42.235+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:42.235+0000] {client_async.py:1049} WARNING - No node available during check_version; sleeping 0.46 secs
+[2025-05-13T01:07:42.698+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2025-05-13T01:07:42.700+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:42.701+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:42.701+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2025-05-13T01:07:42.702+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:42.702+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:42.702+0000] {client_async.py:1049} WARNING - No node available during check_version; sleeping 0.67 secs
+[2025-05-13T01:07:43.378+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2025-05-13T01:07:43.380+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:43.381+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:43.381+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2025-05-13T01:07:43.382+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T01:07:43.382+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T01:07:43.382+0000] {client_async.py:1049} WARNING - No node available during check_version; sleeping 0.47 secs
+[2025-05-13T01:07:43.857+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/sales_dags.py", line 29, in extract_task
+    records = extract_sales_data(batch_size=100)
+  File "/opt/airflow/etl_scripts/extract_from_kafka.py", line 6, in extract_sales_data
+    consumer = KafkaConsumer(
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 387, in __init__
+    self._client = self.config['kafka_client'](metrics=self._metrics, **self.config)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 262, in __init__
+    self.config['api_version'] = self.check_version()
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 1074, in check_version
+    raise Errors.NoBrokersAvailable()
+kafka.errors.NoBrokersAvailable: NoBrokersAvailable
+[2025-05-13T01:07:43.876+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=sales_etl_dag, task_id=extract, execution_date=20250513T010236, start_date=20250513T010741, end_date=20250513T010743
+[2025-05-13T01:07:43.887+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 47 for task extract (NoBrokersAvailable; 285)
+[2025-05-13T01:07:43.915+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-13T01:07:43.928+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,72 @@
+[2025-05-13T18:12:22.898+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_etl_dag.extract manual__2025-05-13T18:12:20.786316+00:00 [queued]>
+[2025-05-13T18:12:22.907+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_etl_dag.extract manual__2025-05-13T18:12:20.786316+00:00 [queued]>
+[2025-05-13T18:12:22.908+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-05-13T18:12:22.952+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2025-05-13 18:12:20.786316+00:00
+[2025-05-13T18:12:22.980+0000] {standard_task_runner.py:57} INFO - Started process 974 to run task
+[2025-05-13T18:12:22.990+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sales_etl_dag', 'extract', 'manual__2025-05-13T18:12:20.786316+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/sales_dags.py', '--cfg-path', '/tmp/tmpyphj03im']
+[2025-05-13T18:12:23.003+0000] {standard_task_runner.py:85} INFO - Job 51: Subtask extract
+[2025-05-13T18:12:23.132+0000] {task_command.py:415} INFO - Running <TaskInstance: sales_etl_dag.extract manual__2025-05-13T18:12:20.786316+00:00 [running]> on host c3fbcdf492ab
+[2025-05-13T18:12:23.285+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='deepak.gadde24@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_etl_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T18:12:20.786316+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-13T18:12:20.786316+00:00'
+[2025-05-13T18:12:23.299+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.19.0.4', 9092)]>: connecting to kafka:9092 [('172.19.0.4', 9092) IPv4]
+[2025-05-13T18:12:23.315+0000] {conn.py:618} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.19.0.4', 9092)]>: Broker version identified as 2.6
+[2025-05-13T18:12:23.316+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.19.0.4', 9092)]>: Connection complete.
+[2025-05-13T18:12:23.318+0000] {consumer.py:120} WARNING - group_id is None: disabling auto-commit.
+[2025-05-13T18:12:23.319+0000] {subscription_state.py:177} INFO - Updating subscribed topics to: ('sales_topic',)
+[2025-05-13T18:12:23.324+0000] {subscription_state.py:246} INFO - Updated partition assignment: [('sales_topic', 0)]
+[2025-05-13T18:12:23.325+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T18:13:38.326+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T18:13:38.336+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T18:13:38.338+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2025-05-13T18:13:38.339+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T18:14:53.349+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T18:14:53.353+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T18:14:53.355+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2025-05-13T18:14:53.356+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T18:16:08.359+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T18:16:08.362+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T18:16:08.362+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2025-05-13T18:16:08.364+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T18:17:23.361+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T18:17:23.365+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T18:17:23.365+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2025-05-13T18:17:23.367+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T18:18:38.374+0000] {conn.py:429} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Connect attempt returned error 111. Disconnecting.
+[2025-05-13T18:18:38.379+0000] {conn.py:945} ERROR - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2025-05-13T18:18:38.381+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2025-05-13T18:18:38.383+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-2.2.6, node_id=1 host=192.168.1.123:9092 <connecting> [IPv4 ('192.168.1.123', 9092)]>: connecting to 192.168.1.123:9092 [('192.168.1.123', 9092) IPv4]
+[2025-05-13T18:19:08.901+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-05-13T18:19:08.996+0000] {process_utils.py:131} INFO - Sending 15 to group 974. PIDs of all processes in the group: [974]
+[2025-05-13T18:19:09.005+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 974
+[2025-05-13T18:19:09.013+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-05-13T18:19:09.047+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/sales_dags.py", line 31, in extract_task
+    records = extract_sales_data(batch_size=100)
+  File "/opt/airflow/etl_scripts/extract_from_kafka.py", line 13, in extract_sales_data
+    for msg in consumer:
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 1188, in __next__
+    return next(self._iterator)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 1160, in _message_generator_v2
+    record_map = self.poll(timeout_ms=timeout_ms, update_offsets=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 684, in poll
+    records = self._poll_once(timer, max_records, update_offsets=update_offsets)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/consumer/group.py", line 729, in _poll_once
+    self._client.poll(timeout_ms=poll_timeout_ms)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 685, in poll
+    self._poll(timeout / 1000)
+  File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 728, in _poll
+    ready = self._selector.select(timeout)
+  File "/usr/local/lib/python3.8/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-05-13T18:19:09.059+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=sales_etl_dag, task_id=extract, execution_date=20250513T181220, start_date=20250513T181222, end_date=20250513T181909
+[2025-05-13T18:19:09.074+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 51 for task extract (Task received SIGTERM signal; 974)
+[2025-05-13T18:19:09.111+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=974, status='terminated', exitcode=1, started='18:12:21') (974) terminated with exit code 1
+[2025-05-13T18:19:09.114+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-05-13T18:19:09.141+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,17 @@
+[2025-05-12T20:00:01.820+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-12T20:00:01.848+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_etl_dag.transform_sales_data scheduled__2025-05-12T19:00:00+00:00 [queued]>
+[2025-05-12T20:00:01.851+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_etl_dag.transform_sales_data scheduled__2025-05-12T19:00:00+00:00 [queued]>
+[2025-05-12T20:00:01.851+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-05-12T20:00:01.856+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform_sales_data> on 2025-05-12 19:00:00+00:00
+[2025-05-12T20:00:01.863+0000] {standard_task_runner.py:57} INFO - Started process 1532 to run task
+[2025-05-12T20:00:01.865+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sales_etl_dag', 'transform_sales_data', 'scheduled__2025-05-12T19:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/sales_dags.py', '--cfg-path', '/tmp/tmpohc9sjwd']
+[2025-05-12T20:00:01.875+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask transform_sales_data
+[2025-05-12T20:00:01.903+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-12T20:00:01.935+0000] {task_command.py:415} INFO - Running <TaskInstance: sales_etl_dag.transform_sales_data scheduled__2025-05-12T19:00:00+00:00 [running]> on host 82ee5defb55f
+[2025-05-12T20:00:01.946+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-12T20:00:02.067+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='deepak' AIRFLOW_CTX_DAG_ID='sales_etl_dag' AIRFLOW_CTX_TASK_ID='transform_sales_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T19:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-12T19:00:00+00:00'
+[2025-05-12T20:00:02.068+0000] {logging_mixin.py:151} INFO - Transforming data...
+[2025-05-12T20:00:02.069+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-05-12T20:00:02.073+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=sales_etl_dag, task_id=transform_sales_data, execution_date=20250512T190000, start_date=20250512T200001, end_date=20250512T200002
+[2025-05-12T20:00:02.092+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-12T20:00:02.114+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
