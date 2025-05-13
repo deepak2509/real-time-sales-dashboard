@@ -17,4 +17,5 @@ This project demonstrates a real-time data processing pipeline using **Apache Ka
 
 ## 🧱 Project Architecture
 
-![Blank diagram-4](https://github.com/user-attachments/assets/dfdf1a9a-9201-4028-8b51-8286cd571a3a)
+![Blank diagram-3](https://github.com/user-attachments/assets/321d8810-a83f-4cef-b7b7-5975467c1d38)
+
